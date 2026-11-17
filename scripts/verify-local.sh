@@ -32,7 +32,7 @@ hr "S1 保守がいつもどおりリリースする(JSP・設定・拡張の追
  find . -name '*.bak' -delete
  git commit -qam "M1 cart slot rename, maxQuantity 50, add shoppromotion"; git push -q)
 OUT=$(sync); echo "$OUT"
-L=$(cd mig && git ls-tree --name-only hybris-sync sync-ledger/ | tail -1)
+L=$(cd mig && git diff-tree --no-commit-id --name-only -r hybris-sync -- sync-ledger/)
 LEDGER=$(cd mig && git show "hybris-sync:$L")
 check "記録に JSP が「移植」として載る"          grep -q '| 移植 | M | `bin/custom/shop/shopstorefront/.*cartPage.jsp`' <<<"$LEDGER"
 check "記録に localextensions が「manifest」で載る" grep -q '| manifest | M | `config/localextensions.xml`' <<<"$LEDGER"
@@ -48,7 +48,7 @@ hr "S2 同じ行を両方が変える(衝突)"
 (cd maint && sed -i.bak 's/target.setWarrantyMonths(source.getWarrantyMonths());/target.setWarrantyMonths(Integer.valueOf(source.getWarrantyMonths()));/' $FACADE && rm $FACADE.bak \
    && git commit -qam "M2 boxing fix" && git push -q)
 OUT=$(sync); echo "$OUT"
-L=$(cd mig && git ls-tree --name-only hybris-sync sync-ledger/ | tail -1)
+L=$(cd mig && git diff-tree --no-commit-id --name-only -r hybris-sync -- sync-ledger/)
 check "記録で衝突候補に印が付く"  grep -q 'WarrantyPopulator.java.*衝突候補' <<<"$(cd mig && git show "hybris-sync:$L")"
 check "マージ前に衝突が分かる"    grep -q 'WarrantyPopulator.java' <<<"$OUT"
 (cd mig && git switch -q -c merge/hybris-s2 origin/main

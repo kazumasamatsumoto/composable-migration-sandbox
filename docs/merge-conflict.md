@@ -14,7 +14,7 @@ git merge origin/hybris-sync          # ここで衝突する
 git add <ファイル>
 git commit
 git push origin merge/hybris-<sha>
-gh pr create --base main --head merge/hybris-<sha> --title "sync: hybris <sha>(衝突解決)" --body-file sync-ledger/<記録>.md
+gh pr create --base main --head merge/hybris-<sha> --title "sync: hybris <sha>(衝突解決)" --body-file sync-ledger/<日時>-<sha>.md
 ```
 
 この PR をマージしたら、`hybris-sync` からの元の PR は閉じます。

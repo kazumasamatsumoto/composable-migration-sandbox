@@ -44,7 +44,7 @@ git branch hybris-sync origin/hybris-sync
 
 scripts/sync-hybris.sh                 # hybris-sync へ取り込み、記録を作り、main と衝突するか先に表示
 git push origin hybris-sync
-gh pr create --base main --head hybris-sync --title "sync: hybris <sha>" --body-file sync-ledger/<記録>.md
+gh pr create --base main --head hybris-sync --title "sync: hybris <sha>" --body-file sync-ledger/<日時>-<sha>.md
 ```
 
 PR の本文には、`sync-ledger/` の記録が入ります。

@@ -36,7 +36,7 @@ classify() {
 }
 
 mkdir -p sync-ledger
-LEDGER=sync-ledger/$(date +%Y%m%d)-${NEW:0:7}.md
+LEDGER=sync-ledger/$(date +%Y%m%d-%H%M%S)-${NEW:0:7}.md
 {
   echo "# 取り込み記録: 保守 ${BASE:0:7}..${NEW:0:7}"
   echo
