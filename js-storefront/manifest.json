@@ -1,0 +1,6 @@
+{
+  "applications": [
+    { "name": "shopstorefront", "path": "shopstorefront", "ssr": { "enabled": false } }
+  ],
+  "nodeVersion": "22"
+}

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 移行チームだけが持つ拡張。保守の Facade が作る warrantyMonths を OCC の応答に載せる -->
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean parent="fieldSetLevelMapping" id="shopProductWsDTOFieldSetLevelMapping">
+		<property name="dtoClass" value="de.hybris.platform.commercewebservicescommons.dto.product.ProductWsDTO"/>
+		<property name="levelMapping">
+			<map>
+				<entry key="DEFAULT" value="warrantyMonths"/>
+				<entry key="FULL" value="warrantyMonths"/>
+			</map>
+		</property>
+	</bean>
+</beans>

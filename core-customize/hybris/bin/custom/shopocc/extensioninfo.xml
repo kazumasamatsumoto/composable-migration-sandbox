@@ -1,0 +1,6 @@
+<extensioninfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="extensioninfo.xsd">
+	<extension name="shopocc" abstractclassprefix="Generated" classprefix="Shopocc">
+		<requires-extension name="shopfacades"/>
+		<requires-extension name="commercewebservices"/>
+	</extension>
+</extensioninfo>

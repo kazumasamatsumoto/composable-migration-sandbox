@@ -1,0 +1,21 @@
+{
+  "commerceSuiteVersion": "2211",
+  "useCloudExtensionPack": false,
+  "extensions": [
+    "shopcore",
+    "shopfacades",
+    "shopocc",
+    "commercewebservices",
+    "cmsoccaddon"
+  ],
+  "useConfig": {
+    "properties": [
+      { "location": "hybris/config/local.properties" }
+    ]
+  },
+  "storefrontAddons": [],
+  "aspects": [
+    { "name": "backoffice" },
+    { "name": "api" }
+  ]
+}
