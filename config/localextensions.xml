@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hybrisconfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="resources/schemas/extensions.xsd">
+	<extensions>
+		<path dir="${HYBRIS_BIN_DIR}" autoload="false"/>
+		<extension name="shopcore"/>
+		<extension name="shopfacades"/>
+		<extension name="shopstorefront"/>
+	</extensions>
+</hybrisconfig>
